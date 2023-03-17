@@ -6,8 +6,9 @@ Basic online food ordering website made with the help of HTML, CSS, Javascript &
 
 1.  npm install
 2.  configure db.js to your database by ensuring the database name in the code matches the the database you have created
-3.  create a cluster on mongodb and change the corresponding details in the mongoose connect function.
-3.  npm start
+3.  create a cluster on mongodb and change the corresponding details in the mongoose connect function in the restaurantController.js file in the user folder
+4.  add the username and the app specific password of the email id with which you want to send the mails via nodemailer in the authController.js 
+5.  npm start
 
 
 ## **Features:**
