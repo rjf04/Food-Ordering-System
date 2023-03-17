@@ -14,8 +14,9 @@ var path= pp.resolve('./views');
 let transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   auth: {
-    user: 'dalmak507@gmail.com',
-    pass: 'gcodkjbpxuolygbo'
+    //Add the email ID as well as the app specific password of the nodemailer in the specified places below
+    user: 'username@gmail.com',
+    pass: 'password'
   }
 });
 
