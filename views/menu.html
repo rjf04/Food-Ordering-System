@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{rest}}</title>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="/js/menu.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: sans-serif;
+      line-height: 1.15;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    article,
+    aside,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    nav,
+    section {
+      display: block;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #f8f9fa;
+      text-align: left;
+      background-color: #343a40;
+    }
+
+    a {
+      color: #ff214f;
+      text-decoration: none;
+      background-color: transparent;
+    }
+
+    a:hover {
+      color: #d4002c;
+      text-decoration: none;
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    .column {
+      float: left;
+      padding: 10px;
+    }
+
+    .left {
+      width: 65%;
+    }
+
+    .right {
+      width: 35%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+
+    .testmonial-card {
+      position: relative;
+      text-align: center;
+    }
+
+    .testmonial-card .testmonial-title {
+      font-size: 1.85rem;
+    }
+
+    .testmonial-card .testmonial-subtitle {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      opacity: 0.8;
+    }
+
+    .testmonial-card .testmonial-body {
+      position: relative;
+      padding: 1rem;
+      border: 2px solid #495057;
+      border-top-color: #ff214f;
+      border-radius: 0.2rem;
+      margin-top: 30px;
+    }
+
+    .testmonial-card .testmonial-body:after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      border-color: #ff214f;
+      border-radius: 0.2rem 0 0 0;
+      border-style: solid;
+      border-width: 2px 0 0 2px;
+      -webkit-transform: rotate(45deg) translateX(-50%);
+      -ms-transform: rotate(45deg) translateX(-50%);
+      transform: rotate(45deg) translateX(-50%);
+      background: #343a40;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark">
+    <ul class="navbar-nav">
+      <li class="nav-itm">
+        <a class="nav-link" href="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/order">My Orders</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/profile">My Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/staff">Staff</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin">Admin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container-fluid ml-4 mr-4 py-4">
+    <div class="row">
+      <div class="col mr-2 ">
+        <!-- start of col 1  -->
+        <h2>Welcome to {{rest}}<input id="rest" type="text" value={{rest}} hidden></input></h2>
+
+        <form class="radio" id="menuSelect">
+          <label><input type="radio" name="msel" value="Breakfast"> Breakfast</label>
+          <label><input type="radio" name="msel" value="Lunch"> Lunch</label>
+          <label><input type="radio" name="msel" value="Dinner"> Dinner</label>
+          <label><input type="radio" name="msel" value="Dessert"> Dessert</label>
+        </form>
+        <table class="container py-5 table" id="menuItems" style="color:white;">
+          <thead>
+            <tr>
+              <th scope="col">Item Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Configurations</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Comment</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+
+          <tbody id="itemrest">
+          </tbody>
+        </table>
+        <!-- end of col 1  -->
+      </div>
+      <div class="col-4 mr-4 bg-success">
+        <!-- start of col 2  -->
+
+        <form class="container py-5" id="cartForm">
+
+          <div class="form-group" id="areas">
+            <label for="areas">Select Address:</label>
+            <select class="form-control" id="areas_select">
+            </select>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label> Promo Code</label>
+              <input type='text' class="form-control" id="discountCode">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col" style="float:right; padding-top:20px; ">
+              <button type="submit" class="form-control btn btn-primary">Create Cart </button>
+            </div>
+          </div>
+          <div id="cartRes">
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- REVIEWS Section  -->
+    <div id="testmonial" class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
+      
+    </div>
+     <!-- <button id="genrev" name="genrev">Generate Review Analysis</button>
+
+    <table class="container py-5 table" style="color: white;">
+      <thead>
+        <tr>
+          <th scope="col">Restaurant Name</th>
+          <th scope="col">Rating</th>
+        </tr>
+      </thead>
+  
+      <tbody id="revrat">
+        
+      </tbody>
+    </table>  -->
+    <br>
+    
+    <div class="col bg-ligh">
+      <!-- start of col 1  -->
+     
+       <table class="container py-5 table" style="color: white;">
+          <thead>
+            <tr>
+              <th scope="col">Restaurant Name</th>
+              <th scope="col">Rating</th>
+            </tr>
+          </thead>
+        
+          <tbody id="revrat">
+            <tr>
+                <td>KFC</td>
+                <td><span>&#9956;</span> <span>&#9956;</span> <span>&#9956;</span></td>
+            </tr>
+                
+            <tr>
+                <td>Machli</td>
+                <td><span>&#9956;</span> <span>&#9956;</span> <span>&#9956;</span> <span>&#9956;</span></td>
+            </tr>
+
+            <tr>
+                <td>McDonalds</td>
+                <td><span>&#9956;</span></td>
+            </tr>
+          </tbody>
+        </table>
+                  <!-- end of col 1  -->
+    </div>
+</body>
+
+</html>

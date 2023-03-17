@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Staff Dashboard</title>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="/js/viewCart.js"></script>
+  
+  <style>
+    
+    html {
+     font-family: sans-serif;
+     line-height: 1.15;
+     -webkit-text-size-adjust: 100%;
+     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   }
+   
+   article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+     display: block;
+   }
+   
+   body {
+     margin: 0;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+     font-size: 1rem;
+     font-weight: 400;
+     line-height: 1.5;
+     color: #f8f9fa;
+     text-align: left;
+     background-color: #343a40;
+   } 
+   
+   a {
+     color: #ff214f;
+     text-decoration: none;
+     background-color: transparent;
+   }
+   
+   a:hover {
+     color: #d4002c;
+     text-decoration: none;
+   }
+     </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark">
+          <ul class="navbar-nav">
+            <li class="nav-itm">
+              <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/order">My Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/staff">Staff</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">Admin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout</a>
+            </li>
+          </ul>
+        </nav>
+        <input id="cartID" value={{cartID}} hidden></input>
+    <div class="container py-5 ">
+        <div class="col bg-ligh">
+          <!-- start of col 1  -->
+          <h2>Cart Number #{{cartID}}</h2>
+          <button id="refresh">Refresh</button>  
+          
+           <table class="container py-5 table" style="color: white;">
+              <thead>
+                <tr>
+                  <th scope="col">Restaurant Name</th>
+                  <th scope="col">Menu Type</th>
+                  <th scope="col">Item Name</th>
+                  <th scope="col">Configuration </th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Comment</th>
+                </tr>
+              </thead>
+            
+              <tbody id="items">
+              </tbody>
+            </table>
+            <div class= "container py-5" id="total"></div>
+
+            <h3>Drop In Your Reviews</h3>
+            <form id="revForm" class="container" method="post" >
+              <div class="form-group">
+                <input class="form-control" id="revname" name="revname" placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                <input class="form-control" id="revrestname" name="revrestname" placeholder="The Restaurant You Wanna Rant About!!!!">
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" id="revcontent" name="revcontent" placeholder="How did you feel about us???"></textarea> 
+              </div>
+              <button id="revsub" type="submit">Submit</button>
+            </form>
+           
+          
+                      <!-- end of col 1  -->
+        </div>
+        
+    </div>
+  
+
+
+    
+</body>
+</html>
