@@ -19,8 +19,8 @@ Basic online food ordering website made with the help of HTML, CSS, Javascript &
 
 ## **There are three user types:**
 
-    1.  Admins: responsible for basically everything
-    2.  Ordering Staff: receive, track and update users' orders.
-    3.  End-Users: Browse everything about the restaurants, place and track their orders.
+1.  Admins: responsible for basically everything
+2.  Ordering Staff: receive, track and update users' orders.
+3.  End-Users: Browse everything about the restaurants, place and track their orders.
 
   
