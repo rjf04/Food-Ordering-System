@@ -22,8 +22,8 @@ function CheckZeros(value){
   else if(val.length==1)return "0"+value;
   else return "00";
 };
-
-mongoose.connect("mongodb+srv://rollin:abcde@cluster0.exwfndk.mongodb.net/FoodOrderingSystem?retryWrites=true&w=majority", {useNewUrlParser : true});
+//Add the username, password and the database name in the specified places below
+mongoose.connect("mongodb+srv://username:password@cluster0.exwfndk.mongodb.net/Database name?retryWrites=true&w=majority", {useNewUrlParser : true});
 const reviewSchema=new mongoose.Schema({
   revname: String,
   revrestname:String,
